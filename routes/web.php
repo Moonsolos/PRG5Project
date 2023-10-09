@@ -20,4 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blogs', [App\Http\Controllers\HomeController::class, 'blogs'])->name('blogs');
+Route::get('/blogs', [App\Http\Controllers\blogsController::class, 'index'])->name('blogs');
+Route::get('/create', [App\Http\Controllers\blogsController::class, 'create'])->name('create');
+Route::resource('blogs', \App\Http\Controllers\blogsController::class);
