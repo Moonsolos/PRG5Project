@@ -36,4 +36,11 @@ class blogsController extends Controller
 
         return redirect()->route('home');
    }
+    public function show(Blog $blog)
+    {
+        return view('blogs.show', [
+            'blog' => $blog,
+            'category' => Category::all(),
+        ]);
+    }
 }

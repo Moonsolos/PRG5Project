@@ -1,0 +1,1 @@
+@foreach($blogs as $blog)
